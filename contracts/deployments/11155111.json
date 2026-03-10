@@ -1,0 +1,12 @@
+{
+  "chainId": 11155111,
+  "deployedAt": "2026-03-10T10:29:55.372Z",
+  "deployer": "0x48BFF61040404E0b6c98e9FA6e9C6a03eb0b012A",
+  "contracts": {
+    "ComplianceRegistry": "0xeFAF8C165bAD3937c20448d6F61D47f54cd1779B",
+    "ScamRegistry": "0x7bE1c848bd06aed901c6d4d6092805002dE91f09",
+    "ReputationScore": "0x1FD9FbFb832d9Aa93C0dF8f74F87fE2f36644Be1",
+    "ReportStaking": "0x8b013C56a43b90b270b05eeBFE9031C0a34259f1",
+    "KYCVerificationSBT": "0xe1BC197c2333FffA7fF442EC9B802DDA1a419DaD"
+  }
+}
