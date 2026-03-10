@@ -99,7 +99,7 @@ export async function paymentRoutes(app: FastifyInstance) {
   app.get(
     "/status/:paymentId",
     { preHandler: [requireAuth] },
-    async (request: FastifyRequest<{ Params: { paymentId: string } }>, reply) => {
+    async (request: any, reply: any) => {
       const userId = (request as any).userId;
       const payment = await prisma.payment.findFirst({
         where: { id: request.params.paymentId, userId },

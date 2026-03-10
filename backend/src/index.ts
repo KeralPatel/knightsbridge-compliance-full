@@ -123,7 +123,7 @@ async function bootstrap() {
   });
 
   // ── Error Handler ─────────────────────────────────────────────────────────
-  app.setErrorHandler((error, request, reply) => {
+  app.setErrorHandler((error: any, request, reply) => {
     app.log.error({ err: error, url: request.url }, "Request error");
 
     if (error.statusCode) {
