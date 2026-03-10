@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0f0f1a;
+  --bg-card: #12121e;
+  --border-default: #1e1e30;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent-indigo: #6366f1;
+  --risk-low: #22c55e;
+  --risk-medium: #f59e0b;
+  --risk-high: #ef4444;
+  --risk-critical: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1e30;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #252540;
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-color: #0a0a0f;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Glow effects */
+.glow-text-indigo {
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3), 0 0 20px rgba(99, 102, 241, 0.1);
+}
+
+/* Risk score gradient bar */
+.risk-bar-fill {
+  transition: width 1s ease-in-out;
+}
+
+/* Code/address style */
+.address {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+}
+
+/* Animated scanner line */
+.scanner-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #6366f1, transparent);
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0%   { top: 0%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Card styles */
+.kcc-card {
+  @apply bg-background-card border border-border rounded-lg;
+}
+
+.kcc-card-hover {
+  @apply transition-all duration-200 hover:border-primary/30 hover:shadow-card-hover;
+}
+
+/* Truncate address */
+.truncate-addr {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .truncate-addr {
+    max-width: 260px;
+  }
+}
